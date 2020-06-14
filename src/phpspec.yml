@@ -1,0 +1,5 @@
+suites:
+  default:
+    src_path: .
+code_generation: true
+bootstrap: test-bootstrap.php
