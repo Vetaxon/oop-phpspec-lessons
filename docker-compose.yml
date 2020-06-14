@@ -1,0 +1,28 @@
+version: '3'
+
+networks:
+  spec-lessons:
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php-spec-lessons
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - "9000:9000"
+    networks:
+      - spec-lessons
+
+  composer:
+    image: composer:latest
+    container_name: composer-php-spec-lessons
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - php
+    networks:
+      - spec-lessons

@@ -1,0 +1,5 @@
+/src/vendor/
+/src/bin/
+/.idea/
+/src/App/AbstractFactory/Example/
+/src/App/Builder/Example/
